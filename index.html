@@ -1,164 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Islombek Iskandarov - Flutter Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>Islombek Resume</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
     body {
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #f0f0f0, #dfe9f3);
-      color: #333;
-      padding: 2rem;
+      margin: 0;
+      background-color: #000;
+      color: #00ff00;
+      font-family: monospace;
+      padding: 20px;
+      white-space: pre-line;
+      overflow: hidden;
     }
-
-    .container {
-      max-width: 1000px;
+    .terminal {
+      max-width: 800px;
       margin: auto;
-      padding: 2rem;
-      background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-      animation: fadeIn 2s ease-in-out;
+      font-size: 16px;
+      line-height: 1.5;
     }
-
-    h1, h2 {
-      color: #222;
-      margin-bottom: 0.5rem;
+    .cursor {
+      display: inline-block;
+      width: 10px;
+      background-color: #00ff00;
+      animation: blink 1s infinite;
     }
-
-    .section {
-      margin-bottom: 2rem;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 1rem;
-    }
-
-    ul li::before {
-      content: '•';
-      color: #1e90ff;
-      margin-right: 0.5rem;
-    }
-
-    .contact, .skills, .languages, .qualities {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .contact div, .skills div, .languages div, .qualities div {
-      background-color: #f5f5f5;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-    }
-
-    .project {
-      margin-bottom: 1rem;
-    }
-
-    .project-title {
-      font-weight: bold;
-      color: #007acc;
-    }
-
-    @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0; }
     }
   </style>
 </head>
-
 <body>
-  <div class="container">
-    <div class="section">
-      <h1>Islombek Iskandarov</h1>
-      <h2>Flutter Developer</h2>
-    </div>
+  <div class="terminal" id="terminal"></div>
 
-    <div class="section contact">
-      <div>📞 +998-90-907-99-49</div>
-      <div>✉️ islombek@example.com</div>
-      <div>📍 Uzbekistan</div>
-    </div>
+  <script>
+    const text = `
+EDUCATION
+Najot Ta'lim – Foundation (2024–2025)
 
-    <div class="section">
-      <h2>Profile</h2>
-      <p>I am a Flutter developer passionate about new technologies and continuous personal and professional growth. I focus on building efficient, user-friendly, and modern mobile applications that address real-world social and technical challenges. I continuously improve my development skills through hands-on project experience and a commitment to learning.</p>
-    </div>
+NAME
+Iskandarov Islombek
 
-    <div class="section">
-      <h2>Education</h2>
-      <p><strong>Najot Ta'lim - Foundation</strong> (2024 - 2025)</p>
-    </div>
+POSITION
+Flutter Developer
 
-    <div class="section skills">
-      <h2>Skills</h2>
-      <div>Flutter & Dart</div>
-      <div>Firebase</div>
-      <div>REST API Integration</div>
-      <div>Google Maps API</div>
-      <div>State Management</div>
-      <div>SharedPreferences</div>
-      <div>Local Storage</div>
-      <div>Git & GitHub</div>
-      <div>Project Management</div>
-      <div>Teamwork</div>
-      <div>Time Management</div>
-      <div>Critical Thinking</div>
-      <div>Leadership</div>
-    </div>
+CONTACT
+📞 +998-90-907-99-49
+📧 Email
 
-    <div class="section languages">
-      <h2>Languages</h2>
-      <div>Uzbek</div>
-      <div>English (Basics)</div>
-    </div>
+SKILLS
+• Flutter & Dart
+• Firebase
+• REST API Integration
+• Google Maps API
+• State Management
+• SharedPreferences & Local Storage
+• Git & GitHub
+• Project Management
+• Teamwork, Time Management
+• Critical Thinking, Leadership
 
-    <div class="section">
-      <h2>Work Experience</h2>
-      <div class="project">
-        <div class="project-title">Travel App</div>
-        <p>A travel app that helps users explore and discover different tourist destinations. Users can view details and images of places and choose their favorite locations. The app features a clean and user-friendly UI for easy use on all screen sizes.</p>
-      </div>
-      <div class="project">
-        <div class="project-title">Restaurant App</div>
-        <p>A mobile restaurant app built with Flutter for viewing menus, placing orders, and managing them. Core CRUD (Create, Read, Update, Delete) functionalities are fully implemented. Provided hands-on experience in mobile development and user interface design.</p>
-      </div>
-      <div class="project">
-        <div class="project-title">ChatGPT App</div>
-        <p>A Flutter-based mobile app that enables real-time interaction with ChatGPT using OpenAI API. Features API integration for sending user input and receiving AI-generated responses. Gave hands-on experience with artificial intelligence and external API usage.</p>
-      </div>
-    </div>
+LANGUAGES
+• Uzbek
+• English (Basics)
 
-    <div class="section qualities">
-      <h2>Personal Qualities</h2>
-      <div>I learn quickly</div>
-      <div>I have the ability to work in a team</div>
-      <div>I am goal-oriented</div>
-    </div>
+PROFILE
+I am a Flutter developer passionate about new technologies and growth.
+I build user-friendly mobile apps to solve real problems and continue improving through hands-on experience.
 
-    <div class="section contact">
-      <div>📱 Telegram</div>
-      <div>💻 GitHub</div>
-      <div>🔗 LinkedIn</div>
-    </div>
-  </div>
+PROJECTS
+• Travel App – Explore and view destinations
+• Restaurant App – CRUD menus and orders
+• ChatGPT App – Real-time chat with OpenAI API
+
+PERSONAL QUALITIES
+• I learn quickly
+• I work well in a team
+• I am goal-oriented
+
+SOCIALS
+• Telegram
+• GitHub
+• LinkedIn
+    `;
+
+    const terminal = document.getElementById("terminal");
+    let i = 0;
+
+    function typeText() {
+      if (i < text.length) {
+        terminal.innerHTML = text.substring(0, i++) + '<span class="cursor"></span>';
+        setTimeout(typeText, 10);
+      } else {
+        terminal.innerHTML = text; // Remove cursor at the end
+      }
+    }
+
+    window.onload = typeText;
+  </script>
 </body>
-
 </html>
