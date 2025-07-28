@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Islombek Resume</title>
+  <title>Islombek Iskandarov - Resume</title>
   <style>
     body {
       margin: 0;
@@ -39,6 +39,15 @@
       color: #00ffff;
       font-weight: bold;
     }
+
+    a {
+      color: #00ff00;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
@@ -73,8 +82,10 @@ Najot Ta'lim – Foundation Program (2024–2025)
 • SharedPreferences & Local Storage
 • Git & GitHub
 • Project Management
-• Teamwork, Time Management
-• Critical Thinking, Leadership
+• Teamwork
+• Time Management
+• Critical Thinking
+• Leadership
 
 <span class="section">LANGUAGES</span>
 • Uzbek (Native)
@@ -87,29 +98,28 @@ I consistently improve through project-based learning and personal motivation.
 
 <span class="section">PROJECTS</span>
 🧭 Travel App
-  • Discover destinations and view details with images.
-  • Clean and responsive UI for all screen sizes.
+• Discover tourist destinations with images and details.
+• Responsive and clean UI for all screen sizes.
 
 🍽️ Restaurant App
-  • Full CRUD operations (Create, Read, Update, Delete).
-  • Manage menus and orders with Flutter.
+• Full CRUD: Create, Read, Update, Delete.
+• View and manage orders with Flutter & Firebase.
 
 🤖 ChatGPT App
-  • Real-time interaction with OpenAI's API.
-  • Send/receive messages using REST API.
+• Real-time interaction with OpenAI API.
+• REST API integration for input/output communication.
 
 <span class="section">PERSONAL QUALITIES</span>
 • Fast Learner
 • Strong Team Player
 • Goal-Oriented
-• Critical Thinker
 • Problem Solver
+• Critical Thinker
 
 <span class="section">SOCIAL LINKS</span>
-• Telegram: <a href="https://t.me/islombek_069" target="_blank" style="color: #00ff00;">t.me/islombek_069</a>  
-• GitHub: <a href="https://github.com/Islombek885" target="_blank" style="color: #00ff00;">github.com/Islombek885</a>  
-• LinkedIn: <a href="https://www.linkedin.com/in/islombek-iskandarov-b29783353/" target="_blank" style="color: #00ff00;">linkedin.com/in/islombek...</a>
-
+• Telegram: <a href="https://t.me/islombek_069" target="_blank">t.me/islombek_069</a>  
+• GitHub: <a href="https://github.com/Islombek885" target="_blank">github.com/Islombek885</a>  
+• LinkedIn: <a href="https://www.linkedin.com/in/islombek-iskandarov-b29783353/" target="_blank">linkedin.com/in/islombek...</a>
 
 System standby. ✅
 `;
@@ -121,7 +131,7 @@ System standby. ✅
       if (i < rawText.length) {
         const currentText = rawText.substring(0, i++);
         terminal.innerHTML = prompt + currentText + '<span class="cursor"></span>';
-        setTimeout(typeText, 8); // tezlik: 8ms
+        setTimeout(typeText, 8);
       } else {
         terminal.innerHTML = prompt + rawText;
       }
