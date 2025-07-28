@@ -11,24 +11,33 @@
       color: #00ff00;
       font-family: monospace;
       padding: 20px;
+      overflow-y: scroll;
       white-space: pre-line;
-      overflow-y: auto; /* scroll ishlashi uchun */
     }
+
     .terminal {
       max-width: 800px;
+      margin: auto;
       font-size: 16px;
       line-height: 1.5;
-      margin-left: 0; /* chap tomondan chiqishi uchun */
+      white-space: pre-wrap;
     }
+
     .cursor {
       display: inline-block;
       width: 10px;
       background-color: #00ff00;
       animation: blink 1s infinite;
     }
+
     @keyframes blink {
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
+    }
+
+    .section {
+      color: #00ffff;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -36,21 +45,26 @@
   <div class="terminal" id="terminal"></div>
 
   <script>
-    const text = `
-EDUCATION
+    const prompt = "> ";
+    const rawText = `
+Booting resume system...
+Loading profile...
+Ready.
+
+<span class="section">EDUCATION</span>
 Najot Ta'lim – Foundation (2024–2025)
 
-NAME
+<span class="section">NAME</span>
 Iskandarov Islombek
 
-POSITION
+<span class="section">POSITION</span>
 Flutter Developer
 
-CONTACT
+<span class="section">CONTACT</span>
 📞 +998-90-907-99-49
 📧 Email
 
-SKILLS
+<span class="section">SKILLS</span>
 • Flutter & Dart
 • Firebase
 • REST API Integration
@@ -62,40 +76,40 @@ SKILLS
 • Teamwork, Time Management
 • Critical Thinking, Leadership
 
-LANGUAGES
+<span class="section">LANGUAGES</span>
 • Uzbek
 • English (Basics)
 
-PROFILE
+<span class="section">PROFILE</span>
 I am a Flutter developer passionate about new technologies and growth.
 I build user-friendly mobile apps to solve real problems and continue improving through hands-on experience.
 
-PROJECTS
+<span class="section">PROJECTS</span>
 • Travel App – Explore and view destinations
 • Restaurant App – CRUD menus and orders
 • ChatGPT App – Real-time chat with OpenAI API
 
-PERSONAL QUALITIES
+<span class="section">PERSONAL QUALITIES</span>
 • I learn quickly
 • I work well in a team
 • I am goal-oriented
 
-SOCIALS
+<span class="section">SOCIALS</span>
 • Telegram
 • GitHub
 • LinkedIn
-    `;
+`;
 
     const terminal = document.getElementById("terminal");
     let i = 0;
 
     function typeText() {
-      if (i < text.length) {
-        terminal.innerHTML = text.substring(0, i++) + '<span class="cursor"></span>';
+      if (i < rawText.length) {
+        const currentText = rawText.substring(0, i++);
+        terminal.innerHTML = prompt + currentText + '<span class="cursor"></span>';
         setTimeout(typeText, 10);
-        terminal.scrollTop = terminal.scrollHeight; // Scroll pastga tushib borishi uchun
       } else {
-        terminal.innerHTML = text; // Remove cursor at the end
+        terminal.innerHTML = prompt + rawText;
       }
     }
 
