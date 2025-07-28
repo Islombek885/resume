@@ -12,13 +12,13 @@
       font-family: monospace;
       padding: 20px;
       white-space: pre-line;
-      overflow: hidden;
+      overflow-y: auto; /* scroll ishlashi uchun */
     }
     .terminal {
       max-width: 800px;
-      margin: auto;
       font-size: 16px;
       line-height: 1.5;
+      margin-left: 0; /* chap tomondan chiqishi uchun */
     }
     .cursor {
       display: inline-block;
@@ -93,6 +93,7 @@ SOCIALS
       if (i < text.length) {
         terminal.innerHTML = text.substring(0, i++) + '<span class="cursor"></span>';
         setTimeout(typeText, 10);
+        terminal.scrollTop = terminal.scrollHeight; // Scroll pastga tushib borishi uchun
       } else {
         terminal.innerHTML = text; // Remove cursor at the end
       }
