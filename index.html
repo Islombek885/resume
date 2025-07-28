@@ -35,45 +35,39 @@
 
   <script>
     const text = `
-[0.000000] Запускаю Resume v1.0 — я, Искандаров Исламбек «Flutter Dev»
-[0.000001] Релиз-дата: 200X — родился для IT, вырос на коди́нге
-[0.000002] BIOS: OK | Самотест: OK | Его: держу (иногда прокручивает)
-[0.000003] Мозг: Self-trained | Частота: ∞ Гц (Dark Mode вкл)
-[0.000004] Точка инициализации: Узбекистан / Наманган / Косонсой
-[0.000005] Системный ID: Flutter Developer / Mobile UX crafter / Firebase enthusiast
+[0.000001] Resume v1.0 — Islomjon Iskandarov (Islombek885)
+[0.000002] Joylashuv: O'zbekiston / Toshkent
+[0.000003] Status: Flutter Developer / Dart / Firebase / REST API
 
-[0.000010] EDUCATION
-Najot Ta'lim Foundation (2024–2025)
-Специализация: Mobile Development (Flutter + Dart)
+[0.000010] 🎓 TA'LIM
+Najot Ta'lim (Flutter Bootcamp, 2024–2025)
+— Yo‘nalish: Mobil dasturlash (Flutter + Dart)
 
-[0.000015] /dev/skills найден
-Языки: Flutter (Dart), REST API, Firebase, Google Maps API, Git
-Мягкие навыки: Time Management, Critical Thinking, Teamwork, Leadership
-Инструменты: GitHub, Android Studio, Postman, Firebase Console
+[0.000015] 💻 KO‘NIKMALAR
+Dasturlash: Flutter, Dart, Firebase, REST API, SharedPreferences, MVC/MVVM
+Soft skills: Tez o‘rganish, Muammolarni yechish, Mas’uliyat
+Tools: GitHub, Android Studio, Postman
 
-[0.000020] /dev/projects найден
->> Travel App – Flutter + Firebase
-   • User-friendly interface, real-time DB
->> Restaurant App – CRUD operations, image picker, local storage
->> ChatGPT App – Интеграция с OpenAI API, живой чат с ИИ
+[0.000020] 📱 LOYIHALAR
+— Recipe App: CRUD + Firebase
+— ChatGPT App: OpenAI bilan integratsiya
+— Responsive Profile App: PIN, Tungi rejim, Tillar, Sozlamalar
 
-[0.000030] /dev/personality запущен
-   • Быстро учусь, решаю задачи, довожу до результата
-   • Увлечён Flutter и мобильными технологиями
-   • Умею работать в команде и брать ответственность
+[0.000030] 💼 MAQSAD
+Flutter’da professional darajaga chiqish.
+Zamonaviy, foydalanishga qulay mobil ilovalar yaratish.
+Hamkorlikda ishlash va real loyihalarda qatnashish.
 
-[0.000040] /dev/socials монтирован
+[0.000040] 🌐 ILOQALAR
 GitHub: https://github.com/Islombek885
 Telegram: @islombek
-LinkedIn: linkedin.com/in/islombek
+Email: islombek@example.com
 
-[0.000050] /languages
-Uzbek — родной
-English — базовый технический
+[0.000050] 📍 TILLAR
+O'zbek (ona tili)
+Ingliz (texnik darajada)
 
-[0.000060] ЦЕЛЬ:
-Развиваться как Flutter разработчик и создавать полезные продукты.
-Писать читаемый, расширяемый и современный код.
+[0.000060] 💡 Tugadi. Boshlang!
 `;
 
     const terminal = document.getElementById("terminal");
@@ -82,7 +76,7 @@ English — базовый технический
     function typeText() {
       if (i < text.length) {
         terminal.innerHTML = text.substring(0, i++) + '<span class="cursor"></span>';
-        setTimeout(typeText, 8); // speed
+        setTimeout(typeText, 7);
       } else {
         terminal.innerHTML = text;
       }
