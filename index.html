@@ -1,32 +1,43 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Islombek Resume Terminal</title>
+  <title>Islombek Resume</title>
   <style>
     body {
       margin: 0;
       background-color: #000;
       color: #00ff00;
       font-family: monospace;
-      white-space: pre;
-      overflow-y: auto;
       padding: 20px;
+      overflow-y: scroll;
+      white-space: pre-line;
     }
+
     .terminal {
-      max-width: 1000px;
+      max-width: 900px;
       margin: auto;
+      font-size: 16px;
+      line-height: 1.5;
+      white-space: pre-wrap;
     }
+
     .cursor {
       display: inline-block;
       width: 10px;
       background-color: #00ff00;
       animation: blink 1s infinite;
     }
+
     @keyframes blink {
       0%, 50% { opacity: 1; }
       51%, 100% { opacity: 0; }
+    }
+
+    .section {
+      color: #00ffff;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -34,51 +45,85 @@
   <div class="terminal" id="terminal"></div>
 
   <script>
-    const text = `
-[0.000001] Resume v1.0 — Islomjon Iskandarov (Islombek885)
-[0.000002] Joylashuv: O'zbekiston / Toshkent
-[0.000003] Status: Flutter Developer / Dart / Firebase / REST API
+    const prompt = "> ";
+    const rawText = `
+Booting resume system...
+Loading data...
+Ready.
 
-[0.000010] 🎓 TA'LIM
-Najot Ta'lim (Flutter Bootcamp, 2024–2025)
-— Yo‘nalish: Mobil dasturlash (Flutter + Dart)
+<span class="section">NAME</span>
+Iskandarov Islombek
 
-[0.000015] 💻 KO‘NIKMALAR
-Dasturlash: Flutter, Dart, Firebase, REST API, SharedPreferences, MVC/MVVM
-Soft skills: Tez o‘rganish, Muammolarni yechish, Mas’uliyat
-Tools: GitHub, Android Studio, Postman
+<span class="section">POSITION</span>
+Flutter Developer
 
-[0.000020] 📱 LOYIHALAR
-— Recipe App: CRUD + Firebase
-— ChatGPT App: OpenAI bilan integratsiya
-— Responsive Profile App: PIN, Tungi rejim, Tillar, Sozlamalar
+<span class="section">CONTACT</span>
+📞 Phone: +998-90-907-99-49
+📧 Email: islombek.dev@gmail.com
 
-[0.000030] 💼 MAQSAD
-Flutter’da professional darajaga chiqish.
-Zamonaviy, foydalanishga qulay mobil ilovalar yaratish.
-Hamkorlikda ishlash va real loyihalarda qatnashish.
+<span class="section">EDUCATION</span>
+Najot Ta'lim – Foundation Program (2024–2025)
 
-[0.000040] 🌐 ILOQALAR
-GitHub: https://github.com/Islombek885
-Telegram: @islombek
-Email: islombek@example.com
+<span class="section">SKILLS</span>
+• Flutter & Dart
+• Firebase
+• REST API Integration
+• Google Maps API
+• State Management
+• SharedPreferences & Local Storage
+• Git & GitHub
+• Project Management
+• Teamwork, Time Management
+• Critical Thinking, Leadership
 
-[0.000050] 📍 TILLAR
-O'zbek (ona tili)
-Ingliz (texnik darajada)
+<span class="section">LANGUAGES</span>
+• Uzbek (Native)
+• English (Basic)
 
-[0.000060] 💡 Tugadi. Boshlang!
+<span class="section">PROFILE</span>
+I am a passionate Flutter developer eager to learn new technologies and grow professionally.
+I focus on building modern, efficient, and user-friendly mobile applications that solve real-world problems.
+I consistently improve through project-based learning and personal motivation.
+
+<span class="section">PROJECTS</span>
+🧭 Travel App
+  • Discover destinations and view details with images.
+  • Clean and responsive UI for all screen sizes.
+
+🍽️ Restaurant App
+  • Full CRUD operations (Create, Read, Update, Delete).
+  • Manage menus and orders with Flutter.
+
+🤖 ChatGPT App
+  • Real-time interaction with OpenAI's API.
+  • Send/receive messages using REST API.
+
+<span class="section">PERSONAL QUALITIES</span>
+• Fast Learner
+• Strong Team Player
+• Goal-Oriented
+• Critical Thinker
+• Problem Solver
+
+<span class="section">SOCIAL LINKS</span>
+• Telegram: <a href="https://t.me/islombek_069" target="_blank" style="color: #00ff00;">t.me/islombek_069</a>  
+• GitHub: <a href="https://github.com/Islombek885" target="_blank" style="color: #00ff00;">github.com/Islombek885</a>  
+• LinkedIn: <a href="https://www.linkedin.com/in/islombek-iskandarov-b29783353/" target="_blank" style="color: #00ff00;">linkedin.com/in/islombek...</a>
+
+
+System standby. ✅
 `;
 
     const terminal = document.getElementById("terminal");
     let i = 0;
 
     function typeText() {
-      if (i < text.length) {
-        terminal.innerHTML = text.substring(0, i++) + '<span class="cursor"></span>';
-        setTimeout(typeText, 7);
+      if (i < rawText.length) {
+        const currentText = rawText.substring(0, i++);
+        terminal.innerHTML = prompt + currentText + '<span class="cursor"></span>';
+        setTimeout(typeText, 8); // tezlik: 8ms
       } else {
-        terminal.innerHTML = text;
+        terminal.innerHTML = prompt + rawText;
       }
     }
 
